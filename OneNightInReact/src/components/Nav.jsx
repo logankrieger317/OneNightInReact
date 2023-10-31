@@ -6,6 +6,7 @@ export default function Nav() {
         <div className="Nav">
             <div>
                 <Link to="/"> Home </Link>
+                <Link to="/categories"> Categories </Link>
             </div>
         </div>
     )
