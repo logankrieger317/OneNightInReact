@@ -6,8 +6,12 @@ export default function Nav() {
         <div className="nav">
             <div>
                 <Link to="/"> Home </Link>
+
                 <Link to="/meals">Meals</Link>
                 
+
+                <Link to="/categories"> Categories </Link>
+
             </div>
         </div>
     )
