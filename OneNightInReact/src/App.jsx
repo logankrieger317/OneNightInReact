@@ -4,8 +4,8 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
 
-import Meals from './components/Reciepe'
-
+import MealList from './components/MealList'
+import MealDetail from './components/MealsDetail'
 import CategoryList from './components/CategoryList'
 
 function App() {
@@ -18,8 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={ <Home/> }/>
 
-          <Route path="/meals" element={<Meals/>}/>
-
+          <Route path="/meals" element={<MealList/>}/>
+          <Route path="/meals/:mealId" element={<MealDetail />} />
           <Route path="/categories" element={ <CategoryList/> }/>
 
         </Routes>
