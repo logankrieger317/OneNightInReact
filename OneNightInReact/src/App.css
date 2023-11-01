@@ -1,5 +1,8 @@
 #root{
- text-align: center;    
+ text-align: center;
+ font-family: 'Fjalla One', 'Radly';
+ color: black;
+ text-shadow: 1px 4px 50px 1px #2f6627; 
 }
 
 .Header{
@@ -15,6 +18,10 @@
   height: 10vh;
   width: 100vw;
 }
+.big-button{
+  width: 25px;
+}
+
 .navButton, .big-button{
   box-shadow: 1px 4px 50px 1px #3dc21b;
   background: linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
@@ -43,5 +50,22 @@
 }
 
 .Main{
-  background-color: yellow;
+  /* background-color: yellow; */
+}
+
+.featured-section{
+  /* background-color: red; */
+}
+.featured-meal{
+  /* background-color: blue; */
+}
+.featured-section-header{
+  
+  font-size: 2em;
+}
+
+.food-image{
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
 }
