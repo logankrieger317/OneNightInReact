@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams, Link, useHistory } from 'react-router-dom';
+import { useParams, Link, } from 'react-router-dom';
 
 function MealDetail() {
   const [meal, setMeal] = useState(null);
   const { mealId } = useParams();
-  const history = useHistory();
+  // const history = useHistory()
 
   useEffect(() => {
     const getMealDetail = async () => {
