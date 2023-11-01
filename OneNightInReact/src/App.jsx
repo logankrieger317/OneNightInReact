@@ -18,7 +18,6 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={ <Home/> }/>
-
           <Route path="/meals" element={<MealList/>}/>
           <Route path="/meals/:mealId" element={<MealDetail />} />
           <Route path="/categories" element={ <CategoryList/> }/>
