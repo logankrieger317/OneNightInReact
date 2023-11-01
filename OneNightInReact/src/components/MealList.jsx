@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function MealList() {
   const [meals, setMeals] = useState(null);
@@ -26,6 +26,7 @@ const showMeal = (mealId) => {
   return meals ? (
     <div className="meal">
             <h1>List of Meal</h1>
+            
             {meals.map((meal, key) => (
                 <div key={key} className="mealCard" onClick={() => showMeal(meal.idMeal)}>
                     <img src={meal.strMealThumb} alt={meal.strMeal}/>
@@ -35,6 +36,7 @@ const showMeal = (mealId) => {
                 </div>
         
         ))}
+        <Link to="/">Back to Home</Link>
         </div>
     ): (
       <h3>Loading Meals...</h3>
