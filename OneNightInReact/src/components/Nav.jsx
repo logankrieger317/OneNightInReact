@@ -5,12 +5,12 @@ export default function Nav() {
     return(
         <div className="nav">
             <div>
-                <Link to="/"> Home </Link>
+                <Link className="navButton" to="/"> Home </Link>
 
-                <Link to="/meals">Meals</Link>
+                <Link className="navButton" to="/meals">Meals</Link>
                 
 
-                <Link to="/categories"> Categories </Link>
+                <Link className="navButton" to="/categories"> Categories </Link>
 
             </div>
         </div>
