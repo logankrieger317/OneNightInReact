@@ -6,6 +6,9 @@ export default function CategoryList() {
     
     const [ categories, setCategories ] = useState([])
     let navigate = useNavigate()
+    const handleGoBack = () => {
+        navigate(-1);
+      }
 
     useEffect(()=>{
         const getCategories = async() => {
@@ -26,6 +29,7 @@ export default function CategoryList() {
     return(
         <div className="categoryList">
             <h2>Category List</h2>
+            <img className= "big-button" src="https://cdn-icons-png.flaticon.com/512/93/93634.png" onClick={handleGoBack}/>
             {categories.map((category, key) => (
                 <div key={key} className="categoryCard" onClick={()=> showCategoryMeals(category.strCategory)}>
                     <img src={category.strCategoryThumb}/>

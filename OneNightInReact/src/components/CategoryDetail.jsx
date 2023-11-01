@@ -8,6 +8,9 @@ export default function CategoryDetail() {
     const [ category, setCategory ] = useState([])
     const { strCategory } = useParams()
     let navigate = useNavigate()
+  const handleGoBack = () => {
+    navigate(-1);
+  }
 
     useEffect(()=>{
         const getCategory = async() => {
@@ -24,6 +27,7 @@ export default function CategoryDetail() {
 
     return(
         <div className="categoryDetail">
+            <p onClick={handleGoBack}>Go Back</p>
             <h2>{strCategory}</h2>
             {category.map((meals, key) =>(
                 <div key={key} className="categoryMealCard" onClick={() => showMeal(meals.idMeal)}>
