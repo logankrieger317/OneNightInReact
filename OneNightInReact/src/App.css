@@ -1,152 +1,105 @@
- #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+#root{
+ text-align: center;
+ font-family: 'Fjalla One', 'Radly';
+ color: black;
+ text-shadow: 1px 4px 50px 1px #2f6627; 
 }
-.App{
+
+.Header{
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width:100%;
-  height: 100%;
+  background-image: url('headerBackground.png');
+  height: 20vh;
+  background-size: cover;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .nav{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: center;
-  height: 10%;
-  width: 90vw;
-  border: 10px solid white;
- 
+  background-color: rgba(255, 255, 255, .0);
+  height: 10vh;
+  width: 100vw;
 }
-.navButton{
-  margin: 10px;
-  color: white;
-  background-color: blue;
-  font-size: 1.5rem;
+.big-button{
+  width: 25px;
+}
+
+.navButton, .big-button{
+  box-shadow: 1px 4px 100px 1px #e49011b5;
+  background: linear-gradient(to bottom, #d46e0f 5%, #f09c14 100%);
+  background-color: #44c767;
+  border-radius: 32px;
+  border: 4px solid #ef8a17;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 20px;
   font-weight: bold;
+  padding: 13px 32px;
+  text-decoration: none;
+  text-shadow: 3px 4px 4px #ff9705;
 }
 
-.main{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: yellow;
-  height: 100%;
-    width: 100%;
+.navButton:hover {
+  background: linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+  background-color: #5cbf2a;
 }
 
-.firstLayer{
+.navButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.Main{
+  /* background-color: yellow; */
+}
+
+.featured-section{
+  /* background-color: red; */
+
+}
+.featured-meal{
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: red;
-  /* height: 100%;
-  width: 90%; */
+  flex-direction: column;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.featured-section-header{
+  
+  font-size: 2em;
+}
+
+.food-image{
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   
 }
 
-.secondLayer{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: blue;
-  height: 100vh;
-  width: 90%;
-  
-}
-
-.thirdLayer{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: green;
-  height: 90%;
-  width: 90%;
-  
-}
-
-.slideshow{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  height: 50%;
-  width: 100%;
-  border: 5px solid black;
+.meal{
+  overflow: auto;
+  height: 60vh;
   margin: 10px;
-  color: black;
-
-}
-.cardContainer{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.card{
-  background-color: white;
-  height: 50%;
-  width: 100%;
-  border: 5px solid black;
-  margin: 10px;
-  color: black;
-}
-
-.intro{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  font-size: 3rem;
-  color: white;
-  font-weight: bold;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   
 }
 
+.mealCard{
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.Footer{
+  background-image: url('headerBackground.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  height: 20vh;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+/* Webkit Tools */
 ::-webkit-scrollbar {
   display: none;
-
 }
-
-.button{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  height: 10%;
-  width: 20%;
-  border: 5px solid black;
-  margin: 10px;
-  color: black;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-.input{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  height: 10%;
-  width: 50%;
-  border: 5px solid black;
-  margin: 10px;
-  color: black;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
