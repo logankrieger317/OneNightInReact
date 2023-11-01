@@ -6,10 +6,14 @@ import RandomMeal from './RandomMeal';
 export default function Home() {
     return(
         <div className="Home">
+
             <Header/>
             <RandomMeal />
+
+            
+
             <Main/>
-            <Footer/>
+            
         </div>
     )
 }

@@ -7,6 +7,7 @@ import Home from './components/Home'
 import MealList from './components/MealList'
 import MealDetail from './components/MealsDetail'
 import CategoryList from './components/CategoryList'
+import CategoryDetail from './components/CategoryDetail'
 
 function App() {
  
@@ -20,6 +21,7 @@ function App() {
           <Route path="/meals" element={<MealList/>}/>
           <Route path="/meals/:mealId" element={<MealDetail />} />
           <Route path="/categories" element={ <CategoryList/> }/>
+          <Route path="/categories/:strCategory" element={<CategoryDetail/>}/>
 
         </Routes>
       </main>
