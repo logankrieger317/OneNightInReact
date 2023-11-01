@@ -20,11 +20,11 @@ function RandomMeal() {
 
     return (
         <section className="featured-section">
-            <h2>Featured Meal</h2>
             
             {randomMeal ? (
                 <div className="featured-meal">
-                    <img src={randomMeal.strMealThumb} alt={randomMeal.strMeal} />
+            <h2 className='featured-section-header'>Featured Meal</h2>
+                    <img className="food-image" src={randomMeal.strMealThumb} alt={randomMeal.strMeal} />
                     <h3>{randomMeal.strMeal}</h3>
                     <p>Category: {randomMeal.strCategory}</p>
                     <p>Cuisine: {randomMeal.strArea}</p>
