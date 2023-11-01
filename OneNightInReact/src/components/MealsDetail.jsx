@@ -2,13 +2,16 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 
+
 function MealDetail() {
   const [meal, setMeal] = useState(null);
   const { mealId } = useParams();
+
   const navigate = useNavigate();
   const handleGoBack = () => {
     navigate(-1);
   }
+
   useEffect(() => {
     const getMealDetail = async () => {
       try {
