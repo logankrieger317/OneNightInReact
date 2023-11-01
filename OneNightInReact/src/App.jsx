@@ -1,32 +1,33 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import Home from './components/Home'
 
-const SearchBar = () => {
-    const [query, setQuery] = useState("");
-    let navigate = useNavigate();
+import MealList from './components/MealList'
+import MealDetail from './components/MealsDetail'
+import CategoryList from './components/CategoryList'
+import CategoryDetail from './components/CategoryDetail'
 
-    const handleInputChange = (event) => {
-        setQuery(event.target.value);
-    };
+function App() {
+ 
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        navigate(`/meals?search=${query}`);
-    };
+  return (
+    <div className='App'>
+      
+      <main>
+        <Routes>
+          <Route path="/" element={ <Home/> }/>
+          <Route path="/meals" element={<MealList/>}/>
+          <Route path="/meals/:mealId" element={<MealDetail />} />
+          <Route path="/categories" element={ <CategoryList/> }/>
+          <Route path="/categories/:strCategory" element={<CategoryDetail/>}/>
 
-    return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    value={query}
-                    onChange={handleInputChange}
-                    placeholder="Search for a meal..."
-                />
-                <button type="submit">Search</button>
-            </form>
-        </div>
-    );
-};
+        </Routes>
+      </main>
+      
+    </div>
+  )
+}
 
-export default SearchBar;
+export default App
