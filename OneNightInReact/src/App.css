@@ -15,7 +15,7 @@
   height: 10vh;
   width: 100vw;
 }
-.navButton .big-button{
+.navButton, .big-button{
   box-shadow: 1px 4px 50px 1px #3dc21b;
   background: linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
   background-color: #44c767;
