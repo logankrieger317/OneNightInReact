@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams, Link, useHistory } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 
 function MealDetail() {
   const [meal, setMeal] = useState(null);
   const { mealId } = useParams();
-  const history = useHistory();
-
+  const navigate = useNavigate();
+  const handleGoBack = () => {
+    navigate(-1);
+  }
   useEffect(() => {
     const getMealDetail = async () => {
       try {
@@ -36,7 +38,9 @@ function MealDetail() {
 
   return (
     <div className="meal-detail">
-      <button onClick={() => history.goBack()}>Back</button>
+      <Link to="/">Back to Home</Link>
+      <button onClick={handleGoBack}>Go Back</button>
+      <Link to="/meals">Back to Meal List</Link>
       <h1>{meal.strMeal}</h1>
       <img src={meal.strMealThumb} alt={meal.strMeal} />
       <p>Category: {meal.strCategory}</p>
@@ -50,8 +54,6 @@ function MealDetail() {
           </li>
         ))}
       </ul>
-      <Link to="/">Back to Home</Link>
-      <Link to="/meals">Back to Meal List</Link>
     </div>
   );
 }
