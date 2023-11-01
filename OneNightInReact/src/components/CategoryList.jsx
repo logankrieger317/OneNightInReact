@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios"
-//import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export default function CategoryList() {
     
     const [ categories, setCategories ] = useState([])
+    let navigate = useNavigate()
 
     useEffect(()=>{
         const getCategories = async() => {
@@ -16,7 +17,9 @@ export default function CategoryList() {
     },[])
     
     
-    
+    const showCategoryMeals = (strCategory) => {
+        navigate(`/categories/${strCategory}`)
+    }
     
     
     
@@ -24,7 +27,7 @@ export default function CategoryList() {
         <div className="categoryList">
             <h2>Category List</h2>
             {categories.map((category, key) => (
-                <div key={key} className="categoryCard">
+                <div key={key} className="categoryCard" onClick={()=> showCategoryMeals(category.strCategory)}>
                     <img src={category.strCategoryThumb}/>
                     <h3>{category.strCategory}</h3>
                     <h4>{category.strCategoryDescription}</h4>
