@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
 
 function MealList() {
   const [meals, setMeals] = useState(null);
@@ -27,12 +29,13 @@ const showMeal = (mealId) => {
 
   return meals ? (
     <>
+    <Header/>
       <div className="meal-list-header">
          <h1>List of Meal</h1>
         </div>
 
       <div className="meal">
-    
+
             {meals.map((meal, key) => (
                 <div key={key} className="mealCard" onClick={() => showMeal(meal.idMeal)}>
                     <img className="food-image" src={meal.strMealThumb} alt={meal.strMeal}/>
@@ -42,7 +45,7 @@ const showMeal = (mealId) => {
                 </div>
         
         ))}
-       
+       <Footer/>
       </div>
     </>
     ): (
