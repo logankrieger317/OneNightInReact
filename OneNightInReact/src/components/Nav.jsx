@@ -12,7 +12,7 @@ export default function Nav() {
                 <Link className="navButton" to="/meals">Meals</Link>
                 
                 <Link className="navButton" to="/categories"> Categories </Link>
-                <SearchBar/>
+                
             </div>
         </div>
     )

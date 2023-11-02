@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios"
 import { useParams, Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import Header from "./Header"
+import Footer from "./Footer";
 
 export default function CategoryDetail() {
     
@@ -26,16 +28,20 @@ export default function CategoryDetail() {
       };
 
     return(
-        <div className="categoryDetail">
+        <div className="categoryMain">
+            <Header/>
+            
             <p onClick={handleGoBack}>Go Back</p>
             <h2>{strCategory}</h2>
+            <div className="categoryList">
             {category.map((meals, key) =>(
-                <div key={key} className="categoryMealCard" onClick={() => showMeal(meals.idMeal)}>
-                    <img src={meals.strMealThumb}/>
+                <div key={key} className="categoryCard" onClick={() => showMeal(meals.idMeal)}>
+                    <img className="categoryImage" src={meals.strMealThumb}/>
                     <h3>{meals.strMeal}</h3>
                 </div>
             ))}
-
+            </div>
+            <Footer/>
         </div>
     )
 }

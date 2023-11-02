@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import SearchBar from './Searchbar';
 
 function RandomMeal() {
     const [randomMeal, setRandomMeal] = useState(null);
@@ -19,7 +20,9 @@ function RandomMeal() {
     }, []);
 
     return (
-    <div className='featured-main'>
+        <>
+        <SearchBar />
+        <div className='featured-main'>
         <section className="featured-section">
             
             {randomMeal ? (
@@ -36,6 +39,7 @@ function RandomMeal() {
             )}
         </section>
     </div>
+    </>
     );
 }
 

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import SearchBar from "./Searchbar";
 
 function MealList() {
   const [meals, setMeals] = useState(null);
@@ -29,9 +30,10 @@ const showMeal = (mealId) => {
 
   return meals ? (
     <>
-    <Header/>
+    
+      
       <div className="meal-list-header">
-         <h1>List of Meal</h1>
+         <h1>List Of All Meals</h1>
         </div>
 
       <div className="meal">
@@ -40,8 +42,8 @@ const showMeal = (mealId) => {
                 <div key={key} className="mealCard" onClick={() => showMeal(meal.idMeal)}>
                     <img className="food-image" src={meal.strMealThumb} alt={meal.strMeal}/>
                     <h2>{meal.strMeal}</h2>
-                    <h3>{meal.strCategory}</h3>
-                    <h3>{meal.strArea}</h3>
+                    <h3>Type Of Dish: {meal.strCategory}</h3>
+                    <h3>Country Of Origin: {meal.strArea}</h3>
                 </div>
         
         ))}

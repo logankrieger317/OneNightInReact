@@ -46,9 +46,9 @@ function MealDetail() {
         <Header />
        </div>
        <div className='mini-nav'>
-        <Link className='link' to="/">Back to Home</Link>
+        {/* <Link className='link' to="/">Back to Home</Link>
         <button onClick={handleGoBack}>Go Back</button>
-        <Link className='link' to="/meals">Back to Meal List</Link>
+        <Link className='link' to="/meals">Back to Meal List</Link> */}
       </div>
       <div className='meal-detail-card'>
         <h1>{meal.strMeal}</h1>

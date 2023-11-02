@@ -32,7 +32,7 @@ export default function CategoryList() {
     <div className="categoryMain">
         <Header/>
             <h2>Category List</h2>
-            <img className= "big-button" src="https://cdn-icons-png.flaticon.com/512/93/93634.png" onClick={handleGoBack}/>
+            {/* <img className= "big-button" src="https://cdn-icons-png.flaticon.com/512/93/93634.png" onClick={handleGoBack}/> */}
         <div className="categoryList">
             {categories.map((category, key) => (
                 <div key={key} className="categoryCard" onClick={()=> showCategoryMeals(category.strCategory)}>

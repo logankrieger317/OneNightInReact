@@ -7,7 +7,7 @@ import MealList from "./MealList";
 export default function Main() {
     return(
         <>
-            <Header />
+            <Header/>
             <main className="Main">
                 <div className="featuredMeal">
                 <RandomMeal />
@@ -16,7 +16,7 @@ export default function Main() {
                 <MealList />
                 </div>
             </main>
-            <Footer />
+            
         </>
     )
 }
