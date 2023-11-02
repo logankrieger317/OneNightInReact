@@ -4,12 +4,14 @@ import { useNavigate, Link } from "react-router-dom";
 
 function MealList() {
   const [meals, setMeals] = useState(null);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  const searchParams = new URLSearchParams(window.location.search);
+  const searchTerm = searchParams.get('search') || "";
 
   useEffect(() => {
     const getMeals = async ()  =>  {
         try{
-        const response =   await axios.get("https://www.themealdb.com/api/json/v1/1/search.php?s=")
+        const response =   await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
         console.log(response)
      setMeals(response.data.meals)
     } catch (error) {
