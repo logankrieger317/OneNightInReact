@@ -19,6 +19,7 @@ function RandomMeal() {
     }, []);
 
     return (
+    <div className='featured-main'>
         <section className="featured-section">
             
             {randomMeal ? (
@@ -34,6 +35,7 @@ function RandomMeal() {
                 <p>Loading featured meal...</p>
             )}
         </section>
+    </div>
     );
 }
 

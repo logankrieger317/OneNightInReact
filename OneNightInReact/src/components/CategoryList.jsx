@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import Header from "./Header"
+import Footer from "./Footer" 
 
 export default function CategoryList() {
     
@@ -27,16 +29,20 @@ export default function CategoryList() {
     
     
     return(
-        <div className="categoryList">
+    <div className="categoryMain">
+        <Header/>
             <h2>Category List</h2>
             <img className= "big-button" src="https://cdn-icons-png.flaticon.com/512/93/93634.png" onClick={handleGoBack}/>
+        <div className="categoryList">
             {categories.map((category, key) => (
                 <div key={key} className="categoryCard" onClick={()=> showCategoryMeals(category.strCategory)}>
-                    <img src={category.strCategoryThumb}/>
+                    <img className="categoryImage" src={category.strCategoryThumb}/>
                     <h3>{category.strCategory}</h3>
                     <h4>{category.strCategoryDescription}</h4>
                 </div>
             ))}
         </div>
+        <Footer/>
+    </div>
     )
 }

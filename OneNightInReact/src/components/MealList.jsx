@@ -26,20 +26,25 @@ const showMeal = (mealId) => {
 };
 
   return meals ? (
-    <div className="meal">
-            <h1>List of Meal</h1>
-            
+    <>
+      <div className="meal-list-header">
+         <h1>List of Meal</h1>
+        </div>
+
+      <div className="meal">
+    
             {meals.map((meal, key) => (
                 <div key={key} className="mealCard" onClick={() => showMeal(meal.idMeal)}>
-                    <img src={meal.strMealThumb} alt={meal.strMeal}/>
+                    <img className="food-image" src={meal.strMealThumb} alt={meal.strMeal}/>
                     <h2>{meal.strMeal}</h2>
                     <h3>{meal.strCategory}</h3>
                     <h3>{meal.strArea}</h3>
                 </div>
         
         ))}
-        <Link to="/">Back to Home</Link>
-        </div>
+       
+      </div>
+    </>
     ): (
       <h3>Loading Meals...</h3>
     );
