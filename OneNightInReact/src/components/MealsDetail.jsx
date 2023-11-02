@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-
+import Header from './Header';
+import Footer from './Footer';
 
 function MealDetail() {
   const [meal, setMeal] = useState(null);
@@ -41,22 +42,30 @@ function MealDetail() {
 
   return (
     <div className="meal-detail">
-      <Link to="/">Back to Home</Link>
-      <button onClick={handleGoBack}>Go Back</button>
-      <Link to="/meals">Back to Meal List</Link>
-      <h1>{meal.strMeal}</h1>
-      <img src={meal.strMealThumb} alt={meal.strMeal} />
-      <p>Category: {meal.strCategory}</p>
-      <p>Origin: {meal.strArea}</p>
-      <p>Instructions: {meal.strInstructions}</p>
-      <h3>Ingredients:</h3>
-      <ul>
-        {ingredients.map((item, key) => (
-          <li key={key}>
-            {item.ingredient} - {item.measurement}
-          </li>
-        ))}
-      </ul>
+      <div className="meal-detail-header">
+        <Header />
+       </div>
+       <div className='mini-nav'>
+        <Link className='link' to="/">Back to Home</Link>
+        <button onClick={handleGoBack}>Go Back</button>
+        <Link className='link' to="/meals">Back to Meal List</Link>
+      </div>
+      <div className='meal-detail-card'>
+        <h1>{meal.strMeal}</h1>
+        <img className="food-image" src={meal.strMealThumb} alt={meal.strMeal} />
+        <p>Category: {meal.strCategory}</p>
+        <p>Origin: {meal.strArea}</p>
+        <p className='meal-instructions'>Instructions: {meal.strInstructions}</p>
+        <h3 className='meal-ingredients'>Ingredients:</h3>
+        <ul>
+          {ingredients.map((item, key) => (
+            <li key={key}>
+              {item.ingredient} - {item.measurement}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <Footer />
     </div>
   );
 }
